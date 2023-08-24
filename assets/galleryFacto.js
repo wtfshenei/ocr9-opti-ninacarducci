@@ -129,6 +129,9 @@ function attachImageClickHandlers() {
   });
 }
 
+/**
+ * Fonctions lancés par défaut.
+ **/
 function init() {
   getUniqueTags().forEach(createFilterButton);
 
