@@ -477,5 +477,9 @@ input[type="submit"] {
 	.infos {
 		margin-left: 15px;
 	}
+
+	.infos h2, address {
+		font-size: 12px;
+	}
 }
 
