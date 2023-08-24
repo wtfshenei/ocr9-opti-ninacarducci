@@ -6,10 +6,16 @@ const buttonFilterAll = document.querySelector(".filterAll");
 let currentIndex;
 let filteredImagesArray = [];
 
+/**
+ * Récupère les tags des images.
+ **/
 function getUniqueTags() {
   return [...new Set(galleryItems.map((item) => item.dataset.galleryTag))];
 }
 
+/**
+ * Applique la classe 'filter-active' au filtre sélectionné.
+ **/
 function toggleFilterButtonActiveState(button) {
   [
     ...filters.querySelectorAll(".filter, .filter-active"),
@@ -23,6 +29,9 @@ function toggleFilterButtonActiveState(button) {
   button.classList.remove("filter");
 }
 
+/**
+ * Crée un bouton pour chaque tag récupéré.
+ **/
 function createFilterButton(tag) {
   const button = document.createElement("button");
   button.classList.add("filter");
@@ -36,6 +45,9 @@ function createFilterButton(tag) {
   filters.append(button);
 }
 
+/**
+ * Filtre les images en fonction du bouton de tag sélectionné. Par défaut 'Tous' est actif.
+ **/
 function filterImages(tag) {
   filteredImagesArray = galleryItems.filter((item) => {
     const matches = tag === "all" || item.dataset.galleryTag === tag;
@@ -45,6 +57,9 @@ function filterImages(tag) {
   attachImageClickHandlers();
 }
 
+/**
+ * Récupère la source et l'alt de l'image cliquée afin de créer la première image du carousel.
+ **/
 function showImage(index) {
   currentIndex = index;
   const imageSrc = filteredImagesArray[index].getAttribute("src");
@@ -52,6 +67,9 @@ function showImage(index) {
   createModal(imageSrc, imageAlt);
 }
 
+/**
+ * Crée la modale qui affiche l'image en grand en fonction de l'image sélectionnée.
+ **/
 function createModal(imageSrc, imageAlt) {
   closeModal();
 
@@ -89,11 +107,17 @@ function createModal(imageSrc, imageAlt) {
   modalDiv.onclick = (e) => !e.target.closest(".modal-zone") && closeModal();
 }
 
+/**
+ * Ferme la modale.
+ **/
 function closeModal() {
   const modal = document.querySelector(".modal");
   if (modal) modal.remove();
 }
 
+/**
+ * Récupère la source et l'alt des images en fonction du tag sélectionné.
+ **/
 function attachImageClickHandlers() {
   filteredImagesArray.forEach((image, index) => {
     image.onclick = () => {
