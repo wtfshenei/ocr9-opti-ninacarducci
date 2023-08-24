@@ -473,3 +473,9 @@ input[type="submit"] {
 	}
 }
 
+@media all and (max-width: 320px) {
+	.infos {
+		margin-left: 15px;
+	}
+}
+
