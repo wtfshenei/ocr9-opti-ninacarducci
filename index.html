@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <meta charset="UTF-8" />
     <title>Nina Carducci - Services de Photographie</title>
     <meta name="author" content="Nina Carducci" />
     <meta
@@ -9,7 +10,6 @@
     />
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
     <meta property="og:title" content="Nina Carducci" />
     <meta property="og:type" content="photography.portfolio" />
     <meta property="og:url" content="http://127.0.0.1:5500/" />
@@ -23,7 +23,6 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,15 +34,35 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/maugallery.js"></script>
-    <script src="./assets/scripts.js"></script>
-    <script src="./assets/gallery.js"></script>
-    <Cache-Control: public, max-age="604800" />
+    <script defer rel="preload" src="./assets/galleryFacto.js"></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Photograph",
+        "name": "Nina Carducci - Services de Photographie",
+        "author": {
+          "@type": "Person",
+          "name": "Nina Carducci"
+        },
+        "description": "Nina Carducci - Services de Photographie",
+        "url": "http://127.0.0.1:5500/",
+        "image": "http://127.0.0.1:5500/assets/images/nina.webp",
+        "thumbnailUrl": "http://127.0.0.1:5500/assets/images/nina.webp",
+        "about": {
+          "@type": "Thing",
+          "name": "Photographie"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Nina Carducci",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://127.0.0.1:5500/assets/images/nina.webp"
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <header class="top-header">
@@ -65,7 +84,7 @@
         </ul>
       </nav>
       <div class="infos">
-        <h2>🏠 : 68 avenue Alsace-Lorraine - 33200 Bordeaux</h2>
+        <address>🏠 : 68 avenue Alsace-Lorraine - 33200 Bordeaux</address>
         <h2>☎️ : 05 56 67 78 89</h2>
         <h2>🕖 : Du lundi au vendredi de 10h à 19h</h2>
       </div>
@@ -172,8 +191,11 @@
       </div>
       <div id="gallery">
         <h2 class="title">Portfolio</h2>
-        <div class="container py-3">
-          <div class="gallery" style="display: none">
+        <div class="container">
+          <div class="gallery-filters">
+            <button class="filterAll" data-filter="all">Tous</button>
+          </div>
+          <div class="gallery-display">
             <img
               data-gallery-tag="Concert"
               class="gallery-item"
