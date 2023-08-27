@@ -41,12 +41,13 @@
       rel="stylesheet"
     />
     <script
+      defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
     <script defer rel="preload" src="./assets/galleryFacto.js"></script>
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style.min.css" />
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -89,7 +90,11 @@
               class="social-link"
               href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
               target="_blank"
-              ><img src="assets/images/instagram.png" alt="Instagram"
+              ><img
+                src="assets/images/instagram.png"
+                alt="Instagram"
+                width="20px"
+                height="20px"
             /></a>
           </li>
         </ul>
@@ -135,6 +140,8 @@
                 src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp"
                 class="d-block w-100"
                 alt="Ryoji Iwata - Photographie d'un homme traversant la rue"
+                width="1920"
+                max-height="888"
               />
             </div>
             <div class="carousel-item">
@@ -175,8 +182,10 @@
       <div id="about">
         <div class="picture left">
           <img
-            src="./assets/images/nina.webp"
+            src="./assets/images/nina2.webp"
             alt="Nina - Photographie portrait de l'artiste"
+            width="374px"
+            height="329px"
           />
         </div>
         <div id="about-me">
@@ -210,56 +219,65 @@
             <img
               data-gallery-tag="Concert"
               class="gallery-item"
-              src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp"
+              src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_small.webp"
               alt="Aaron Paul - Photographie d'un concert"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Entreprises"
               class="gallery-item"
-              src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp"
+              src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_small.webp"
               alt="Ali Morshedlou - Photographie d'un homme d'entreprise"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Entreprises"
               class="gallery-item"
-              src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp"
+              src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_small.webp"
               alt="Jason Goodman - Photographie d'une réunion d'entreprise"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Mariages"
               class="gallery-item"
-              src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp"
+              src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_small.webp"
               alt="Hannah Busing - Photographie de mariage"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Portrait"
               class="gallery-item"
-              src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp"
+              src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_small.webp"
               alt="Ade Tunji - Photographie portrait de l'homme"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Mariages"
               class="gallery-item"
-              src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp"
+              src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_small.webp"
               alt="Jakob Owens - Photographie de mariage"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Portrait"
               class="gallery-item"
-              src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp"
+              src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_small.webp"
               alt="Nino Van Prattenburg - Photographie portrait de la femme"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Concert"
               class="gallery-item"
-              src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp"
+              src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_small.webp"
               alt="Austin Neill - Photographie d'un concert"
+              loading="lazy"
             />
             <img
               data-gallery-tag="Entreprises"
               class="gallery-item"
-              src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp"
+              src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_small.webp"
               alt="Mateus Campos Felipe - Photographie d'une salariée d'entreprise"
+              loading="lazy"
             />
           </div>
         </div>
@@ -361,8 +379,10 @@
         </div>
         <div class="picture right">
           <img
-            src="./assets/images/camera.webp"
+            src="./assets/images/camera2.webp"
             alt="Photographie d'un appareil photo"
+            width="374px"
+            height="329px"
           />
         </div>
       </div>

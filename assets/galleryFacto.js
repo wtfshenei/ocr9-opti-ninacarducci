@@ -57,8 +57,12 @@ function filterImages(tag) {
   attachImageClickHandlers();
 }
 
+function getLargeImageSrc(src) {
+  return src.replace("_small", "_large");
+}
+
 /**
- * Récupère la source et l'alt de l'image cliquée afin de créer la première image du carousel.
+ * Gestion de l'affichage de l'image du carousel.
  **/
 function showImage(index) {
   currentIndex = index;
@@ -73,12 +77,13 @@ function showImage(index) {
 function createModal(imageSrc, imageAlt) {
   closeModal();
 
+  const largeImageSrc = getLargeImageSrc(imageSrc);
   const template = `
         <div class="modal-wrapper">
           <div class="image-container">    
             <button class="close button-style">X</button>
             <button class="prev button-style"><</button>
-            <img src="${imageSrc}" alt="${imageAlt}" class="modal-image modal-zone">
+            <img src="${largeImageSrc}" alt="${imageAlt}" class="modal-image modal-zone">
             <button class="next button-style">></button>
           </div>
         </div>
@@ -91,15 +96,26 @@ function createModal(imageSrc, imageAlt) {
 
   modalDiv.querySelector(".prev").onclick = (e) => {
     e.stopPropagation();
-    showImage(
+    currentIndex =
       (currentIndex - 1 + filteredImagesArray.length) %
-        filteredImagesArray.length
+      filteredImagesArray.length;
+    const largeImageSrc = getLargeImageSrc(
+      filteredImagesArray[currentIndex].getAttribute("src")
     );
+    const imageAlt = filteredImagesArray[currentIndex].getAttribute("alt");
+    createModal(largeImageSrc, imageAlt);
   };
+
   modalDiv.querySelector(".next").onclick = (e) => {
     e.stopPropagation();
-    showImage((currentIndex + 1) % filteredImagesArray.length);
+    currentIndex = (currentIndex + 1) % filteredImagesArray.length;
+    const largeImageSrc = getLargeImageSrc(
+      filteredImagesArray[currentIndex].getAttribute("src")
+    );
+    const imageAlt = filteredImagesArray[currentIndex].getAttribute("alt");
+    createModal(largeImageSrc, imageAlt);
   };
+
   modalDiv.querySelector(".close").onclick = (e) => {
     e.stopPropagation();
     closeModal();
