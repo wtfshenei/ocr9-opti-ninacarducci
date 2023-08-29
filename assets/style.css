@@ -1,3 +1,47 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./fonts/Inter/static/Inter-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+	font-display: swap;
+}
+
+/* Pour la police Spectral Regular */
+@font-face {
+    font-family: 'Spectral';
+    src: url('./fonts/Spectral/Spectral-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+	font-display: swap;
+}
+
+/* Pour la police Spectral Italic 300 */
+@font-face {
+    font-family: 'Spectral';
+    src: url('./fonts/Spectral/Spectral-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+	font-display: swap;
+}
+
+/* Pour la police Spectral Italic 400 */
+@font-face {
+    font-family: 'Spectral';
+    src: url('./fonts/Spectral/Spectral-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+	font-display: swap;
+}
+
+/* Pour la police Spectral Italic 800 */
+@font-face {
+    font-family: 'Spectral';
+    src: url('./fonts/Spectral/Spectral-ExtraBoldItalic.ttf');
+    font-weight: 800;
+    font-style: italic;
+	font-display: swap;
+}
+
 body {
 	max-width: 1920px;
 	margin: auto;
