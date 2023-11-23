@@ -51,7 +51,7 @@ function createFilterButton(tag) {
 function filterImages(tag) {
   filteredImagesArray = galleryItems.filter((item) => {
     const matches = tag === "all" || item.dataset.galleryTag === tag;
-    item.style.display = matches ? "block" : "none";
+    item.closest(".gallery-element").style.display = matches ? "block" : "none";
     return matches;
   });
   attachImageClickHandlers();
@@ -59,16 +59,6 @@ function filterImages(tag) {
 
 function getLargeImageSrc(src) {
   return src.replace("_small", "_large");
-}
-
-/**
- * Gestion de l'affichage de l'image du carousel.
- **/
-function showImage(index) {
-  currentIndex = index;
-  const imageSrc = filteredImagesArray[index].getAttribute("src");
-  const imageAlt = filteredImagesArray[index].getAttribute("alt");
-  createModal(imageSrc, imageAlt);
 }
 
 /**
@@ -83,7 +73,7 @@ function createModal(imageSrc, imageAlt) {
           <div class="image-container">    
             <button class="close button-style">X</button>
             <button class="prev button-style"><</button>
-            <img src="${largeImageSrc}" alt="${imageAlt}" class="modal-image modal-zone">
+              <img src="${largeImageSrc}" alt="${imageAlt}" class="modal-image modal-zone">
             <button class="next button-style">></button>
           </div>
         </div>
