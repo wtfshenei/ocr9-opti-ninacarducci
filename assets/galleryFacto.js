@@ -1,4 +1,4 @@
-const modalLocation = document.querySelector("main");
+const modalLocation = document.querySelector("html");
 const galleryItems = [...document.querySelectorAll(".gallery-item")];
 const filters = document.querySelector(".gallery-filters");
 const buttonFilterAll = document.querySelector(".filterAll");
